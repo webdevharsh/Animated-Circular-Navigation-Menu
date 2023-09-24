@@ -1,0 +1,75 @@
+/*javascriptpro_*/
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+background: #0F141A;
+display: flex;
+align-items: center;
+justify-content: center;
+min-height: 100vh;
+}
+
+.menu {
+position: relative;
+height: 200px;
+width: 200px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.menu li {
+position: absolute;
+left: 0;
+list-style-type: none;
+transform-origin: 100px;
+transition: .5s;
+transition-delay: calc(0.1s * var(--i));
+transform: rotate(0deg) translateX(80px);
+}
+
+.menu.active li {
+transform: rotate(calc(360deg / 8 * var(--i)));
+}
+
+.menu li a {
+height: 40px;
+width: 40px;
+background: #343748;
+display: flex;
+align-items: center;
+justify-content: center;
+border-radius: 100%;
+transform: rotate(calc(360deg / -8 * var(--i)));
+transition: 0.5s;
+color: #fff;
+cursor: pointer;
+}
+
+.menu li a:hover {
+color: #2CFC50;
+}
+
+.toggle {
+height: 60px;
+width: 60px;
+background: #2CFC50;
+display: flex;
+justify-content: center;
+align-items: center;
+border-radius: 100%;
+z-index: 1000;
+cursor: pointer;
+font-size: 2em;
+box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+transition: transform 1.25s;
+color: #0F141A;
+}
+
+.menu.active .toggle {
+transform: rotate(315deg);
+}
